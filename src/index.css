@@ -5,9 +5,32 @@
 * {
   box-sizing: border-box;
 }
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   width: 100%;
   overflow-x: hidden;
+}
+.custom-pagination {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.custom-pagination .swiper-pagination-bullet {
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+  background-color: white;
+  opacity: 1;
+  transform: scale(1.2);
+  width: 50px;
+  height: 20px;
+  border-radius: 15px;
 }

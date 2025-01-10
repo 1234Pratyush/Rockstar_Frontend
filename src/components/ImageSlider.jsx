@@ -2,9 +2,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-import { Pagination } from "swiper/modules";
 
 export default function ImageSlider() {
   const slides = [
@@ -35,36 +34,47 @@ export default function ImageSlider() {
   ];
 
   return (
-    <div className="slider-container relative w-[100vw] h-full max-w-full overflow-hidden ">
-      <Swiper
-        pagination={{ dynamicBullets: true }}
-        modules={[Pagination]}
-        spaceBetween={30}
-        slidesPerView={1}
-        className="w-full max-h-max "
-      >
-        {slides.map((slide, index) => (
-          <SwiperSlide key={index} className="relative h-full w-full">
-            <div className="flex  md:flex-row items-center w-full">
-              {/* Image Section */}
-              <div className="min-w-max h-full">
-                <img
-                  src={slide.image}
-                  alt={slide.title}
-                  className="object-cover h-[80vh]"
-                />
+    <>
+      <div className="slider-container relative w-[100vw] h-full max-w-full overflow-hidden">
+        <Swiper
+          pagination={{
+            clickable: true,
+            dynamicBullets: true,
+            el: ".custom-pagination",
+          }}
+          autoplay={{
+            delay: 5000, 
+            disableOnInteraction: false,
+          }}
+          loop={true} 
+          modules={[Pagination, Autoplay]}
+          spaceBetween={30}
+          slidesPerView={1}
+          className="w-full max-h-max"
+        >
+          {slides.map((slide, index) => (
+            <SwiperSlide key={index} className="relative h-full w-full">
+              <div className="flex md:flex-row items-center w-full">
+                <div className="min-w-max h-full">
+                  <img
+                    src={slide.image}
+                    alt={slide.title}
+                    className="object-cover h-[80vh]"
+                  />
+                </div>
+                <div className="bg-black text-white md:w-1/4 p-10 grid gap-7 items-center justify-between">
+                  <h2 className="text-5xl font-bold">{slide.title}</h2>
+                  <p className="text-xl">{slide.subtitle}</p>
+                  <button className="border border-white px-1 py-3 rounded hover:bg-yellow-500 hover:text-black transition">
+                    {slide.buttonText}
+                  </button>
+                </div>
               </div>
-              <div className="bg-black  text-white md:w-1/4 p-10 flex-col items-center justify-between  border-2">
-                <h2 className="text-xl font-bold">{slide.title}</h2>
-                <p className="text-lg">{slide.subtitle}</p>
-                <button className="border border-white px-4 py-2 rounded hover:bg-white hover:text-black transition">
-                  {slide.buttonText}
-                </button>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+            </SwiperSlide>
+          ))}
+          <div className="custom-pagination min-w-full flex justify-center relative mt-2 "></div>
+        </Swiper>
+      </div>
+    </>
   );
 }
