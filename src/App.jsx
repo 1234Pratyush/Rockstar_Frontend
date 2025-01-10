@@ -1,25 +1,20 @@
+import "./App.css";
 
-import './App.css'
-import Header from './Header'
-import NewBody from './Body'
-import Footer from './Footer'
+import { Route, Routes } from "react-router-dom";
 
-
-
+import Home from "./Pages/Home";
+import MainLayout from "./layouts/MainLayout";
+import Newswire from "./Pages/Newswire";
 
 function App() {
-
-
   return (
-    <div>
-  <Header/>
-  <NewBody />
-    <Footer/>
-  
- 
-    </div>
-     
-  )
+    <MainLayout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/newswire" element={<Newswire/>}></Route>
+      </Routes>
+    </MainLayout>
+  );
 }
 
-export default App
+export default App;
