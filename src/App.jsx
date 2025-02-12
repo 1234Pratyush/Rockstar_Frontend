@@ -7,6 +7,7 @@ import MainLayout from "./layouts/MainLayout";
 import Newswire from "./Pages/Newswire";
 import Footer from "./layouts/Footer";
 import CorporateInfo from "./Pages/CorporateInfo";
+import Downloads from "./Pages/Downloads";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/newswire" element={<Newswire />}></Route>
-        <Route path="/corpinfo" element={<CorporateInfo />}></Route>
+      <Route path="/downloads" element={<Downloads/>}></Route>
       </Routes>
     </MainLayout>
   );

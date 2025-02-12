@@ -88,10 +88,49 @@ export default function Header() {
       </div>
       <div
         className={`${
-          hideOption ? "h-96 opacity-100" : "h-0 opacity-0"
-        } w-full left-0 bg-[#121212] text-white absolute top-16 flex items-center justify-center border border-black overflow-hidden transition-all duration-500 ease-in-out`}
+          hideOption ? "h-[25rem] opacity-100" : "h-0 opacity-0"
+        } w-full left-0 bg-[#121212] text-white absolute top-16   border border-black overflow-hidden transition-all duration-500 ease-in-out`}
       >
-        hello
+        <div>
+          <h2 className="ml-14 font-bold text-3xl mt-12">Featured Games</h2>
+          <div className="photos mt-4 ml-14 flex gap-10">
+            <div className="border border-black w-[15rem] h-[16rem] overflow-hidden rounded-md  cursor-pointer transition-transform duration-500 ease-in-out hover:scale-110">
+              <img
+                src="./src/assets/images/img1.jpg"
+                alt="Game Image"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="border border-black w-[15rem] h-[16rem] overflow-hidden rounded-md cursor-pointer transition-transform duration-500 ease-in-out hover:scale-110">
+              <img
+                src="./src/assets/images/img2.jpg"
+                alt="Game Image"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="border border-black w-[15rem] h-[16rem] overflow-hidden rounded-md cursor-pointer transition-transform duration-500 ease-in-out hover:scale-110">
+              <img
+                src="./src/assets/images/img3.jpg"
+                alt="Game Image"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="border border-black w-[15rem] h-[16rem] overflow-hidden rounded-md cursor-pointer transition-transform duration-500 ease-in-out hover:scale-110">
+              <img
+                src="./src/assets/images/img4.jpg"
+                alt="Game Image"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="border border-black w-[15rem] h-[16rem] overflow-hidden rounded-md cursor-pointer transition-transform duration-500 ease-in-out hover:scale-110">
+              <img
+                src="./src/assets/images/img5.jpg"
+                alt="Game Image"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
