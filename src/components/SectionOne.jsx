@@ -1,5 +1,6 @@
 import React from "react";
 import ImageCard from "./ImageCard";
+
 const data = [
   {
     src: "./src/assets/images/ef5336dc5e15531d52da9b79c53d8ea32888063f.jpg",
@@ -17,6 +18,7 @@ const data = [
     description: "Have a Blast In This Holiday Season In Read Dead Online",
   },
 ];
+
 const data2 = [
   {
     src: "./src/assets/images/BountyBonusesWeek-GTAOe-Header.webp",
@@ -38,45 +40,43 @@ const data2 = [
 
 export default function SectionOne() {
   return (
-    <div className="Section1 mt-20">
-      <div>
-       
-          
-          <h1 className="text-white text-3xl cursor-pointer ml-14 font-bold ">
-            Newswire
-          </h1>
-      
+    <div className="Section1 mt-20 px-4 md:px-14">
+      {/* Title */}
+      <div className="text-center md:text-left">
+        <h1 className="text-white text-3xl font-bold cursor-pointer">
+          Newswire
+        </h1>
       </div>
 
-      <div className="cardsrow1 flex justify-center mt-10 gap-10 ml-14 cursor-pointer">
-        {data.map((item) => {
-          return (
-            <ImageCard
-              path={item.src}
-              title={item.title}
-              description={item.description}
-              key={item.title}
-            />
-          );
-        })}
-      </div>
-      <div className=" cardsrow2 mt-10 ml-14 flex gap-10 cursor-pointer">
-        {data2.map((item) => {
-          return (
-            <ImageCard
-              path={item.src}
-              title={item.title}
-              description={item.description}
-              key={item.title}
-            />
-          );
-        })}
+      {/* First Row */}
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {data.map((item) => (
+          <ImageCard
+            path={item.src}
+            title={item.title}
+            description={item.description}
+            key={item.title}
+          />
+        ))}
       </div>
 
+      {/* Second Row */}
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {data2.map((item) => (
+          <ImageCard
+            path={item.src}
+            title={item.title}
+            description={item.description}
+            key={item.title}
+          />
+        ))}
+      </div>
+
+      {/* View More Button */}
       <div className="flex items-center justify-center mt-14">
-        <div className="text-white flex items-center justify-center  border-b-4 border-yellow-500 text-xl font-bold cursor-pointer w-40 h-12 rounded hover:bg-yellow-500 hover:text-black transition-all duration-500 ease-in-out">
+        <button className="text-white border-b-4 border-yellow-500 text-xl font-bold cursor-pointer w-40 h-12 rounded hover:bg-yellow-500 hover:text-black transition-all duration-500 ease-in-out">
           View More
-        </div>
+        </button>
       </div>
     </div>
   );
